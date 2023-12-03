@@ -4,7 +4,6 @@ total = 0
 array = []
 with open('day3.txt', 'r') as file:
     while True:
-
         line = file.readline().replace('\n', '')
         if not line:
             break
@@ -29,7 +28,7 @@ def find_number(i, j):
 for i, line in enumerate(array):
     for j, char in enumerate(line):
         numbers = set()
-        if not char.isdigit() and char != '.':
+        if (part_2 and char == "*") or (not char.isdigit() and char != '.'):
             if array[i+1][j+1].isdigit():
                 numbers.add(find_number(i+1, j+1))
             if array[i+1][j].isdigit():
@@ -46,7 +45,11 @@ for i, line in enumerate(array):
                 numbers.add(find_number(i-1, j))
             if array[i-1][j-1].isdigit():
                 numbers.add(find_number(i-1, j-1))
-        total += sum(numbers)
+        if part_2:
+            if len(numbers) == 2:
+                total += numbers.pop()*numbers.pop()
+        else:
+            total += sum(numbers)
         
 print(total) 
                 
