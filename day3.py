@@ -1,14 +1,10 @@
+from util import init, load_day, load_file, result
+init()
 
 part_2 = True
 total = 0
-array = []
-with open('day3.txt', 'r') as file:
-    while True:
-        line = file.readline().replace('\n', '')
-        if not line:
-            break
-        array.append(list(line))
-        
+array = load_day(3, True)
+
 def find_number(i, j):
     number = [[j, int(array[i][j])]]
     index = j
@@ -51,5 +47,6 @@ for i, line in enumerate(array):
         else:
             total += sum(numbers)
         
-print(total) 
+result(total)
+# print(total) 
                 
