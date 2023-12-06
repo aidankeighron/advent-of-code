@@ -1,5 +1,5 @@
-import time
-
+import time, math
+from parse import compile, parse
 
 def load_file(file: str, char: bool = False) -> list[list[str]] | list[str]:
     with open(file, 'r') as file:
@@ -15,8 +15,17 @@ def load_file(file: str, char: bool = False) -> list[list[str]] | list[str]:
 def load_day(day: int, char: bool = False) -> list[list[str]] | list[str]:
     return load_file(f'./txt/day{day}.txt', char)
 
-start = 0
+def format(input: str, pattern: str):
+    p = compile(pattern)
+    result = p.parse(input)
+    return result.fixed
 
+def flatten(x):
+    return [j for i in x for j in i]
+    
+format("Game 1: 10 10 10", "Game {}: {} {} {}")
+
+start = 0
 def init():
     global start
     start = time.time()

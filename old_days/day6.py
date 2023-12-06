@@ -1,6 +1,6 @@
-# from util import init, load_day, load_file, result
-# import math
-# init()
+from util import init, load_day, load_file, result
+import math
+init()
 
 # array = load_day(6)
 # total = 1
