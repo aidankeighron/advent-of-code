@@ -8,23 +8,32 @@
 
 # # Time:        44     70     70     80
 # # Distance:   283   1134   1134   1491
-# time1 = 44707080
-# distance1 = 283113411341491
+time1 = 44707080
+distance1 = 283113411341491
 
 
-print(part2)
+# print(part2)
 #            10399622441600
 # i*(44707080-i) 
 a = 0
-for i in range(int(7500000), int(37000000)):
-    print(f'{i}/{int(3.7*10**7- 7.5*10**6)}')
-    speed = i
-    time = time1-i
-    print(i*(time1-i))
-    if speed*time > distance1:
+print(sum(1 for i in range(1, time1) if (i*(time1-i) > distance1)))
+for i in range(1, time1):
+    #     print(f'{i}/{int(3.7*10**7- 7.5*10**6)}')
+#     speed = i
+#     time = time1-i
+    # print(i*(time1-i))
+    if i*(time1-i) > distance1:
         a+=1
-total*=a
 print(a)
+# for i in range(int(7500000), int(37000000)):
+#     print(f'{i}/{int(3.7*10**7- 7.5*10**6)}')
+#     speed = i
+#     time = time1-i
+#     print(i*(time1-i))
+#     if speed*time > distance1:
+#         a+=1
+# total*=a
+# print(a)
 # time1 = 70
 # distance1 = 1134
 # d= []
