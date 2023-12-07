@@ -6,6 +6,4 @@ array = load_day(5)
 part_2 = False
 total = 0
 
-print(array)
-
 result(total)
