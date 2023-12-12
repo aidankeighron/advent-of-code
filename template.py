@@ -1,8 +1,9 @@
 from util import init, load_day, load_file, result
 import math
+import numpy as np
 init()
 
-array = load_day(12)
+array = load_day(13)
 part_2 = False
 total = 0
 
