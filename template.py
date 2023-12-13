@@ -3,7 +3,7 @@ import math
 import numpy as np
 init()
 
-array = load_day(13)
+array = load_day(14)
 part_2 = False
 total = 0
 
