@@ -1,5 +1,22 @@
 import time, math
 from parse import compile, parse
+import numpy as np
+
+def box_poly_area(poly, includes_start=True):
+    area = poly_area(poly)
+    border = len(poly) - (1 if includes_start else 0)
+    return (area + 1 - border // 2) + border
+
+def poly_area(poly):
+    x, y = [], []
+    for p in poly:
+        x.append(p[0])
+        y.append(p[1])
+    return poly_area(x,y)
+    
+
+def poly_area(x,y):
+    return 0.5*np.abs(np.dot(x,np.roll(y,1))-np.dot(y,np.roll(x,1)))
 
 def load_file(file: str, char: bool = False) -> list[list[str]] | list[str]:
     with open(file, 'r') as file:
