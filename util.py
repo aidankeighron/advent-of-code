@@ -7,6 +7,12 @@ def box_poly_area(poly, includes_start=True):
     border = len(poly) - (1 if includes_start else 0)
     return (area + 1 - border // 2) + border
 
+def lcm(xs):
+  ans = 1
+  for x in xs:
+    ans = (ans*x)//math.gcd(x,ans)
+  return ans
+
 def poly_area(poly):
     x, y = [], []
     for p in poly:
