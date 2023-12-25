@@ -46,7 +46,7 @@ def format(input: str, pattern: str):
 def flatten(x):
     return [j for i in x for j in i]
     
-format("Game 1: 10 10 10", "Game {}: {} {} {}")
+# format("Game 1: 10 10 10", "Game {}: {} {} {}")
 
 start = 0
 def init():
