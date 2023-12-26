@@ -1,10 +1,12 @@
 from collections import Counter
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 import math
 from functools import cmp_to_key
 init()
 
-array = load_day(7)
+array = load_day(7, 2023)
 part_2 = False
 total = 0
 cards = ["A", "K", "Q", "T", "9", "8", "7", "6", "5", "4", "3", "2", "J"]

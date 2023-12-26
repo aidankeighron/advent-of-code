@@ -1,9 +1,11 @@
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 import math
 import numpy as np
 init()
 
-array = load_day(18)
+array = load_day(18, 2023)
 part_2 = False
 total = 0
 
@@ -28,16 +30,16 @@ for line in array:
         for _ in range(amount):
             points.append((points[-1][0],points[-1][1]+1))
             
-x = []
-y = []
+x_coords = []
+y_coords = []
 for p in points:
-    x.append(p[0])
-    y.append(p[1])
+    x_coords.append(p[0])
+    y_coords.append(p[1])
     
 def poly_area(x,y):
     return 0.5*np.abs(np.dot(x,np.roll(y,1))-np.dot(y,np.roll(x,1)))
 
-A = poly_area(x, y)
+A = poly_area(x_coords, y_coords)
 b = len(points)+1
 I = A + 1 - b // 2
 result(int(I+b))

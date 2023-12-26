@@ -3,16 +3,16 @@ import math
 import numpy as np
 init()
 
-array = load_day(24)
+array = load_day(24, 2023)
 part_2 = False
 total = 0
 
 lines = []
 for line in array:
-    x, y, z, vx, vy, vz = format(line, '{}, {}, {} @ {}, {}, {}')
-    x, y, z, vx, vy, vz = int(x), int(y), int(z), int(vx), int(vy), int(vz)
-    y_init = (vy/vx)*(-x)+y
-    lines.append((y_init, (vy/vx), x, y, vx, vy))
+    x_coords, y_coords, z, vx, vy, vz = format(line, '{}, {}, {} @ {}, {}, {}')
+    x_coords, y_coords, z, vx, vy, vz = int(x_coords), int(y_coords), int(z), int(vx), int(vy), int(vz)
+    y_init = (vy/vx)*(-x_coords)+y_coords
+    lines.append((y_init, (vy/vx), x_coords, y_coords, vx, vy))
     
 for i, line in enumerate(lines):
     for j, other_line in enumerate(lines[i:]):

@@ -1,7 +1,9 @@
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 init()
 
-array = load_day(4)
+array = load_day(4, 2023)
 total = 0
 part_2 = False
 

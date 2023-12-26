@@ -1,8 +1,10 @@
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 import math
 init()
 
-array = load_day(10)
+array = load_day(10, 2023)
 part_2 = False
 total = 1
 

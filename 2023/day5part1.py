@@ -1,6 +1,8 @@
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 init()
-array = load_day(5)
+array = load_day(5, 2023)
 total = 0
 
 seeds = array[0].split(":")[1].split(" ")[1:]

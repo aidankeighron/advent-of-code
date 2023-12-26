@@ -1,8 +1,10 @@
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 import math
 init()
 
-array = load_day(5)
+array = load_day(5, 2023)
 total = 0
 
 seeds = array[0].split(":")[1].split(" ")[1:]
@@ -24,7 +26,7 @@ for i in range(0, len(seeds), 2):
             new_seeds = []
             indexes = []
             for j, seed in enumerate(current_seeds):
-                print(f'{j}/{len(current_seeds)}')
+                # print(f'{j}/{len(current_seeds)}')
                 new_seed = int(seed)
                 for m in maps:
                     if int(m[1]) <= int(seed) <= int(m[1])+int(m[2]):
@@ -60,7 +62,7 @@ for k, line in enumerate(array[2:]):
         new_seeds = []
         indexes = []
         for j, seed in enumerate(current_seeds):
-            print(f'{j}/{len(current_seeds)}')
+            # print(f'{j}/{len(current_seeds)}')
             new_seed = int(seed)
             for m in maps:
                 if int(m[1]) <= int(seed) <= int(m[1])+int(m[2]):

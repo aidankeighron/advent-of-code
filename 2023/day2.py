@@ -1,10 +1,12 @@
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 init()
 
 total = 0
 maxes = {'red': 12, 'green': 13, 'blue': 14}
 part_2 = True
-for line in load_day(2):
+for line in load_day(2, 2023):
     mins = {'red': 0, 'green': 0, 'blue': 0}
     not_possible = False
     game_id, content = line.split(':')

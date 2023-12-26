@@ -1,6 +1,9 @@
 import time, math
 from parse import compile, parse
-import numpy as np
+import numpy as np, datetime
+
+# https://plotly.com/python/
+import plotly.express as px
 
 def box_poly_area(poly, includes_start=True):
     area = poly_area(poly)
@@ -13,16 +16,12 @@ def lcm(xs):
     ans = (ans*x)//math.gcd(x,ans)
   return ans
 
-def poly_area(poly):
-    x, y = [], []
-    for p in poly:
-        x.append(p[0])
-        y.append(p[1])
-    return poly_area(x,y)
+def poly_area(poly: list[int, int]) -> int:
+    return poly_area(zip(*poly))
     
 
-def poly_area(x,y):
-    return 0.5*np.abs(np.dot(x,np.roll(y,1))-np.dot(y,np.roll(x,1)))
+def poly_area(x_coords: int, y_coords: int) -> int:
+    return 0.5*np.abs(np.dot(x_coords,np.roll(y_coords,1))-np.dot(y_coords,np.roll(x_coords,1)))
 
 def load_file(file: str, char: bool = False) -> list[list[str]] | list[str]:
     with open(file, 'r') as file:
@@ -35,8 +34,21 @@ def load_file(file: str, char: bool = False) -> list[list[str]] | list[str]:
                 del file_content[-1]
             return file_content
 
-def load_day(day: int, char: bool = False) -> list[list[str]] | list[str]:
-    return load_file(f'./txt/day{day}.txt', char)
+def graph_points(points: list) -> None:
+    x_coords, y_coords = zip(*points)
+    fig = px.scatter(x=x_coords, y=y_coords)
+    fig.show()
+
+def print_points(points: list, width: int, height: int, flipped: bool = False) -> None:
+    image = ['.' for _ in range(width) for _ in range(height)]
+    for point in points:
+        point = point[::-1] if flipped else point
+        image[point[0]][point[1]] = '#'
+    for i in image:
+        print(''.join(i))
+
+def load_day(day: int, year: int = datetime.datetime.now().year, char: bool = False) -> list[list[str]] | list[str]:
+    return load_file(f'./{year}/txt/day{day}.txt', char)
 
 def format(input: str, pattern: str):
     p = compile(pattern)
@@ -46,12 +58,14 @@ def format(input: str, pattern: str):
 def flatten(x):
     return [j for i in x for j in i]
     
-# format("Game 1: 10 10 10", "Game {}: {} {} {}")
-
 start = 0
 def init():
     global start
-    start = time.time()
+    start = time.time_ns()
     
 def result(total: int = 0):
-    print(f'Answer: {total} Time: {"%.2f"%(time.time()-start)}')
+    duration_ns = time.time_ns()-start
+    if duration_ns / 1_000_000_000 < 2:
+        print(f'Answer: {total} Time: {round(duration_ns / 1_000_000, 2)}ms')
+    else:
+        print(f'Answer: {total} Time: {round(duration_ns / 1_000_000_000, 2)}s')

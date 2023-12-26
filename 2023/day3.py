@@ -1,9 +1,11 @@
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 init()
 
 part_2 = True
 total = 0
-array = load_day(3, True)
+array = load_day(3, 2023, True)
 
 def find_number(i, j):
     number = [[j, int(array[i][j])]]

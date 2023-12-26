@@ -1,3 +1,5 @@
+import sys
+sys.path.append("../advent-of-code-2023")
 from util import init, load_day, load_file, result
 init()
 
@@ -5,7 +7,7 @@ words = {"one":"1","two":"2","three":"3","four":"4","five":"5","six":"6","seven"
 total = 0
 part_2 = True
 
-for line in load_day(1):            
+for line in load_day(1, 2023):            
     matches = []       
     for i, char in enumerate(line):
         if char.isdigit():

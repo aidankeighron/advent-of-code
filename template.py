@@ -1,6 +1,7 @@
-from util import init, load_day, load_file, result
-import math
-import numpy as np
+import sys
+sys.path.append("../advent-of-code-2023")
+from util import *
+import numpy as np, math
 init()
 
 array = load_day(25)
@@ -8,5 +9,6 @@ part_2 = False
 total = 0
 
 for line in array:
+    
 
 result(total)
