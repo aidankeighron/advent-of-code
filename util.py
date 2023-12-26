@@ -17,7 +17,7 @@ def lcm(xs):
   return ans
 
 def poly_area(poly: list[int, int]) -> int:
-    return poly_area(zip(*poly))
+    return poly_area(*zip(*poly))
     
 
 def poly_area(x_coords: int, y_coords: int) -> int:
