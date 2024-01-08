@@ -22,7 +22,7 @@ def poly_area(poly: list[int, int]) -> int:
 def poly_area(x_coords: int, y_coords: int) -> int:
     return 0.5*np.abs(np.dot(x_coords,np.roll(y_coords,1))-np.dot(y_coords,np.roll(x_coords,1)))
 
-def load_file(file: str, char: bool = False) -> list[list[str]] | list[str]:
+def load_file(file: str, char: bool = False) -> list:
     with open(file, 'r') as file:
         if char:
             file_content = [list(line) for line in file.read().split()] 
@@ -46,7 +46,7 @@ def print_points(points: list, width: int, height: int, flipped: bool = False) -
     for i in image:
         print(''.join(i))
 
-def load_day(day: int, year: int = datetime.datetime.now().year, char: bool = False) -> list[list[str]] | list[str]:
+def load_day(day: int, year: int = datetime.datetime.now().year, char: bool = False) -> list:
     return load_file(f'./{year}/txt/day{day}.txt', char)
 
 def format(input: str, pattern: str):
