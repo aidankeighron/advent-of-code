@@ -63,14 +63,25 @@ def print_points(points: list, width: int, height: int, flipped: bool = False) -
 def load_day(day: int, year: int = datetime.datetime.now().year, char: bool = False) -> list:
     return load_file(f'./{year}/txt/day{day}.txt', char)
 
-def format(input: str, pattern: str):
+def format(input: str, pattern: str, to_int: bool = False):
     p = compile(pattern)
     result = p.parse(input)
+    if to_int:
+        return list_to_int(*result.fixed)
     return result.fixed
 
 def flatten(x):
     return [j for i in x for j in i]
-    
+
+def try_int(x):
+    try:
+        return int(x)
+    except:
+        return x
+
+def list_to_int(*x):
+    return list(map(try_int, x))
+
 start = 0
 def init():
     global start

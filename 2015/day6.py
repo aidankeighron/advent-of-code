@@ -14,11 +14,9 @@ twos = np.array([[2 for _ in range(1000)] for _ in range(1000)])
 zeroes = np.array([[0 for _ in range(1000)] for _ in range(1000)])
 
 for line in array:
-    operator, start1, start2, end1, end2 = format(line, '{} {},{} through {},{}')
-    start1 = int(start1)
-    start2 = int(start2)
-    end1 = int(end1)+1
-    end2 = int(end2)+1
+    operator, start1, start2, end1, end2 = format(line, '{} {},{} through {},{}', True)
+    end1 += 1
+    end2 += 1
     
     if operator == 'turnon':
         grid[start1:end1, start2:end2] += ones[start1:end1, start2:end2]
@@ -27,9 +25,6 @@ for line in array:
         grid[grid == -1] = zeroes[grid == -1]
     if operator == 'toggle':
         grid[start1:end1, start2:end2] += twos[start1:end1, start2:end2]
-        
-for i in range(len(list)//2):
-    list[~i], list[i] = list[i], list[~i]
     
 
 flattened = grid.flatten()

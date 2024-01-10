@@ -2,7 +2,6 @@
 
 - Done: nothing further needed
 - Rewrite: rewrite code
-- Util: add part of code to util
 - Research: learn more about the problem
 - Practice: Redo for practice
 
@@ -16,22 +15,22 @@
 
 | Day | Status | Part |
 |  -  |     :-:    |   -:  |
-|  1  |  Util Practice | 12 |
+|  1  | Practice | 12 |
 |  ~~2~~  |    ~~Done~~   |   ~~0~~ |
-|  3  | Rewrite Research Util | 1 |
+|  3  | Rewrite Research | 1 |
 |  ~~4~~  | ~~Done~~ | ~~0~~ |
 |  5  | Research | 2 |
 |  6  | Research Rewrite | 2 |
-|  7  | ~Util | 12 |
+|  ~~7~~  | ~~Done~~ | ~~12~~ |
 |  8  | Rewrite | 2 |
-|  9  | Rewrite ~Util | 12 |
+|  9  | Rewrite | 12 |
 |  10  | Rewrite | 2 |
 |  11  | Research | 2 |
 |  12  | Research Rewrite | 2 |
 |  13  | Research Rewrite | 12 |
 |  14  | Practice! | 12 |
 |  15  | Research | 12 |
-|  16  | Research Rewrite Util | 2 |
+|  16  | Research Rewrite | 2 |
 |  17  | Research Rewrite | 12 |
 |  18  | Research | 2 |
 |  19  | Research | 2 |
@@ -52,8 +51,8 @@
 |  ~~2~~  | ~~Done~~ | ~~0~~ |
 |  3  |  Research  | 2  |
 |  ~~4~~  | ~~Done~~ | ~~0~~ |
-|  ~~5~~  | Util | ~~0~~ |
-|  ~~6~~  | Util int() | ~~0~~ |
+|  ~~5~~  | ~~Done~~ | ~~0~~ |
+|  ~~6~~  | ~~Done~~ | ~~0~~ |
 |  7  |  | |
 |  8  |  | |
 |  9  |  | |
