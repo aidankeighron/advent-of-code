@@ -1,8 +1,22 @@
 import time, math
 from parse import compile, parse
-import numpy as np, datetime, os
+import numpy as np, datetime, os, time
 # https://plotly.com/python/
 import plotly.express as px
+
+times = {}
+def profile(name):
+    def decorate(fn):
+        def wrapper(*args, **kwargs):
+            start = time.time_ns()
+            result = fn(*args, **kwargs)
+            if name not in times:
+                times[name] = []
+            times[name].append((time.time_ns() - start)/1_000_000)
+            print(f'{name}: {np.average(times[name])}')
+            return result
+        return wrapper
+    return decorate
 
 def box_poly_area(poly, includes_start=True):
     area = poly_area(poly)
