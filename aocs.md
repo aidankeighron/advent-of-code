@@ -58,7 +58,7 @@
 |  9  | Research | 12 |
 |  ~~10~~  | ~~Done~~ | ~~0~~ |
 |  11  | Util (Both methods can be shortened with fancy array stuff like all) | 12 |
-|  12  |  | |
+|  12  | Util | 12 |
 |  13  |  | |
 |  14  |  | |
 |  15  |  | |
