@@ -59,8 +59,8 @@
 |  ~~10~~  | ~~Done~~ | ~~0~~ |
 |  11  | Util (Both methods can be shortened with fancy array stuff like all) | 12 |
 |  12  | Util | 12 |
-|  13  |  | |
-|  14  |  | |
+|  ~~13~~  | ~~Done~~ | ~~0~~ |
+|  ~~14~~  | ~~Done~~  | ~~0~~ |
 |  15  |  | |
 |  16  |  | |
 |  17  |  | |

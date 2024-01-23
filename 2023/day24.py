@@ -9,7 +9,7 @@ total = 0
 
 lines = []
 for line in array:
-    x_coords, y_coords, z, vx, vy, vz = format(line, '{}, {}, {} @ {}, {}, {}')
+    x_coords, y_coords, z, vx, vy, vz = parse_line(line, '{}, {}, {} @ {}, {}, {}')
     x_coords, y_coords, z, vx, vy, vz = int(x_coords), int(y_coords), int(z), int(vx), int(vy), int(vz)
     y_init = (vy/vx)*(-x_coords)+y_coords
     lines.append((y_init, (vy/vx), x_coords, y_coords, vx, vy))

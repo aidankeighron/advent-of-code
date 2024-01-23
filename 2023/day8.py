@@ -1,6 +1,6 @@
 import sys
 sys.path.append("../advent-of-code-2023")
-from util import init, load_day, load_file, result, format
+from util import init, load_day, load_file, result, parse_line
 import math
 init()
 
@@ -12,7 +12,7 @@ path = {}
 current = []
 end = []
 for line in array[2:]:
-    key, path1, path2 = format(line, "{} = ({}, {})")
+    key, path1, path2 = parse_line(line, "{} = ({}, {})")
     if key[2] == "A":
         current.append(key)
     if key[2] == "Z":

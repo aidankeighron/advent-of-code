@@ -12,7 +12,7 @@ total = 0
 mapping = {}
 people = set()
 for line in array:
-    person1, sign, amount, person2 = format(line, '{} would {} {} happiness units by sitting next to {}.')
+    person1, sign, amount, person2 = parse_line(line, '{} would {} {} happiness units by sitting next to {}.')
     if person1 not in mapping:
         mapping[person1] = {}
     mapping[person1][person2] = int(amount) * (1 if sign == 'gain' else -1)

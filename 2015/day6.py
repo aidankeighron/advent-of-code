@@ -14,7 +14,7 @@ twos = np.array([[2 for _ in range(1000)] for _ in range(1000)])
 zeroes = np.array([[0 for _ in range(1000)] for _ in range(1000)])
 
 for line in array:
-    operator, start1, start2, end1, end2 = format(line, '{} {},{} through {},{}', True)
+    operator, start1, start2, end1, end2 = parse_line(line, '{} {},{} through {},{}', True)
     end1 += 1
     end2 += 1
     

@@ -1,5 +1,4 @@
-import time, math
-from parse import compile, parse
+import time, math, parse
 import numpy as np, datetime, os, time
 # https://plotly.com/python/
 import plotly.express as px
@@ -63,9 +62,9 @@ def print_points(points: list, width: int, height: int, flipped: bool = False) -
 def load_day(day: int, year: int = datetime.datetime.now().year, char: bool = False) -> list:
     return load_file(f'./{year}/txt/day{day}.txt', char)
 
-def format(input: str, pattern: str, to_int: bool = False):
-    p = compile(pattern)
-    result = p.parse(input)
+def parse_line(line: str, pattern: str, to_int: bool = False):
+    p = parse.compile(pattern)
+    result = p.parse(line)
     if to_int:
         return list_to_int(*result.fixed)
     return result.fixed
