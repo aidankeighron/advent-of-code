@@ -3,6 +3,14 @@ import numpy as np, datetime, os, time
 # https://plotly.com/python/
 import plotly.express as px
 
+def new_day(day: int, year: int) -> None:
+    file = open(f'./{year}/txt/day{day}.txt', 'w')
+    file.close()
+    file = open(f'./{year}/day{day}.py', 'w')
+    template = open('./template.py', 'r')
+    file.write(template.read())
+    file.close()
+
 times = {}
 def profile(name):
     def decorate(fn):
