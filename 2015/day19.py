@@ -19,19 +19,43 @@ for line in array:
     else:
         string = line
 
-res = set()
-def dfs(i, cur):
-    if i >= len(cur):
-        res.add(cur)
+steps_list = []
+seen = set()
+def dfs(i, cur, steps):
+    if cur == string:
+        steps_list.append(steps)
+        print(steps)
         return
+    if len(cur) >= len(string):
+        return
+    if cur in seen:
+        return
+    if i >= len(cur):
+        dfs(0, cur, steps)
     
     for o in options:
+        if i+len(o) > len(cur):
+            continue
         if cur[i:i+len(o)] == o:
             for option in options[o]:
-                res.add(cur[:i] + option + cur[i+len(o):])
-                # dfs(i+len(option), cur[:i] + option + cur[i+len(o):])
-    dfs(i+1, cur)
+                seen.add(cur)
+                dfs(i+len(option), cur[:i] + option + cur[i+len(o):], steps+1)
+    seen.add(cur)
+    dfs(i+1, cur, steps+1)
 
-dfs(0, string)
+# res = set()
+# def dfs(i, cur):
+#     if i >= len(cur):
+#         res.add(cur)
+#         return
+    
+#     for o in options:
+#         if cur[i:i+len(o)] == o:
+#             for option in options[o]:
+#                 res.add(cur[:i] + option + cur[i+len(o):])
+#                 # dfs(i+len(option), cur[:i] + option + cur[i+len(o):])
+#     dfs(i+1, cur)
 
-result(len(res)-1)
+dfs(0, "e", 0)
+
+result(min(steps_list))
