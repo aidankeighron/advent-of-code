@@ -4,7 +4,7 @@ from util import *
 import numpy as np, math
 init()
 
-array = load_day(21, 2015)
+array = load_day(22, 2015)
 part_2 = False
 total = 0
 
