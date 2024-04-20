@@ -6,11 +6,9 @@ from functools import reduce
 
 init()
 
-array = load_day(1, 2016)
-part_2 = False
-total = 0
-
-for line in array:
-    
+total = 20151125
+count = sum(range(3010 + 3019 - 1)) + 3019
+for _ in range(count - 1):
+    total = (total * 252533) % 33554393
 
 result(total)
