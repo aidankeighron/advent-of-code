@@ -1,5 +1,5 @@
 import sys
-sys.path.append("../advent-of-code-2023")
+sys.path.append("../advent-of-code")
 from util import *
 import numpy as np, math, json
 init()

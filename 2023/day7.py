@@ -1,6 +1,6 @@
 from collections import Counter
 import sys
-sys.path.append("../advent-of-code-2023")
+sys.path.append("../advent-of-code")
 from util import init, load_day, load_file, result
 import math
 from functools import cmp_to_key

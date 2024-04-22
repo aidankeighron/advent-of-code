@@ -3,7 +3,7 @@ from math import max
 from python import Python
 
 def main():
-    Python.add_to_path("/home/aidan/advent-of-code-2023")
+    Python.add_to_path("/home/aidan/advent-of-code")
     let util = Python.import_module("util")
     util.init()
 

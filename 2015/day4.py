@@ -1,5 +1,5 @@
 import sys
-sys.path.append("../advent-of-code-2023")
+sys.path.append("../advent-of-code")
 import util
 import hashlib
 
