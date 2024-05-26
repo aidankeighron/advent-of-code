@@ -6,7 +6,7 @@ from functools import reduce
 
 init()
 
-array = load_day(7, 2016)
+array = load_day(8, 2016)
 part_2 = False
 total = 0
 
