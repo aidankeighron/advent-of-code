@@ -1,12 +1,12 @@
 import sys
 sys.path.append("../advent-of-code")
 from util import *
-import numpy as np, math, itertools
+import numpy as np, math, itertools, hashlib
 from functools import reduce
 
 init()
 
-array = load_day(17, 2016)
+array = load_day(18, 2016)
 part_2 = False
 total = 0
 
