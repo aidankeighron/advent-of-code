@@ -7,27 +7,19 @@ from functools import reduce
 init()
 
 array = load_day(1, 2024)
-part_2 = False
-total = 0
-n, a = [], []
+part_1, part_2 = 0, 0
+a, b = [], []
 for line in array:
     num1, num2 = line.split("   ")
-    n.append(int(num1))
-    a.append(int(num2))
+    a.append(int(num1))
+    b.append(int(num2))
 
-z = {}
-x = {}
+a.sort()
+b.sort()
 
-# n.sort()
-# a.sort()
+for c, d in zip(a[::-1], b[::-1]):
+    part_1 += abs(c-d)
+    part_2 += b.count(c)*c
 
-for q in n:
-    # print(a.count(q)*q)
-    total += a.count(q)*q
-
-# for b, c in zip(n[::-1], a[::-1]):
-#     total += abs(b-c)
-
-result(total)
-# print(z)
-# result(sum(i for i in z.values()))
+result(part_1)
+result(part_2)
