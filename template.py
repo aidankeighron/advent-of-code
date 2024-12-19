@@ -2,7 +2,7 @@ import sys
 sys.path.append("../advent-of-code")
 from util import *
 import numpy as np, math, itertools, hashlib
-from functools import reduce
+from functools import reduce, cache
 from collections import defaultdict
 
 init()
@@ -14,9 +14,13 @@ def p_a(arr):
 def to_g(grid, arr, integer):
     grid.append([int(x) if integer else x for x in arr])
 
-array = load_day(19, 2024)
+array = load_day(20, 2024)
 part_2 = False
 total = 0
+
+@cache
+def bfs(node):
+    return False
 
 grid = []
 for line in array:
