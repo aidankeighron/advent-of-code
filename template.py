@@ -14,7 +14,7 @@ def p_a(arr):
 def to_g(grid, arr, integer):
     grid.append([int(x) if integer else x for x in arr])
 
-array = load_day(23, 2024)
+array = load_day(24, 2024)
 part_2 = False
 total = 0
 
