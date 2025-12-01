@@ -5,6 +5,14 @@ import numpy as np, math, itertools, hashlib
 from functools import reduce, cache
 from collections import defaultdict
 
+# https://docs.python.org/3/library/collections.html
+# https://docs.python.org/3/library/itertools.html
+# Itertools Functions:
+# product('ABCD', repeat=2)                   AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
+# permutations('ABCD', 2)                     AB AC AD BA BC BD CA CB CD DA DB DC
+# combinations('ABCD', 2)                     AB AC AD BC BD CD
+# combinations_with_replacement('ABCD', 2)    AA AB AC AD BB BC BD CC CD DD
+
 init()
 
 def p_a(arr):
