@@ -22,7 +22,7 @@ def p_a(arr):
 def to_g(grid, arr, integer):
     grid.append([int(x) if integer else x for x in arr])
 
-array = load_day(5, 2025)
+array = load_day(3, 2025)
 part_2 = False
 total = 0
 
@@ -32,8 +32,22 @@ def bfs(node):
 
 grid = []
 for line in array:
-    to_g(grid, line, False)
+    line = [int(i) for i in line]
+    num = ""
+    offset = 0
+    for n in range(11, -1, -1):
+        line_1 = line[offset:-n] if n != 0 else line[offset:]
+        m = max(line_1)
+        num += str(m)
+        m_i = line_1.index(m)
 
-p_a(grid)
+        if m_i == len(line_1)-1:
+            line_1 = line[:-1]
+            num += "".join([str(a) for a in line[m_i+offset+1:]])
+            break
+        else:
+            offset += m_i+1
+        
+    total += int(num)
 
 result(total)
